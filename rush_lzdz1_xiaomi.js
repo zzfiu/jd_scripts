@@ -1,7 +1,7 @@
 /*
-大牌联合 瓜分京豆
-2021-5-18 ~ 2021-12-31
-https://lzdz1-isv.isvjcloud.com/dingzhi/commonUse/openCard/activity/5792837?activityId=581a27b8458743069b802351cdbae6b2&shareUuid=36a1f6079b594473b4ea96c3428d9b68
+星动七夕 纵享丝滑
+2021-8-11 ~ 2021-8-15
+https://lzdz1-isv.isvjcloud.com/dingzhi/commonUse/openCard/activity/5645188?activityId=b856fb097683415facd1ae733672de9e
 */
 const $ = new Env("OPPO");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -47,10 +47,7 @@ if ($.isNode()) {
                 continue
             }
             authorCodeList = [
-                '36a1f6079b594473b4ea96c3428d9b68',
-                // '1da8f80579ab4363ab8d3f2d57657ffb',
-                // 'ecf959c6f2244128bee7f80468ac2788',
-                // 'a6822a216644422bac64ad3c7fbfec41',
+                '4f7a40e534f7437283f897a28670606d',
             ]
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
@@ -64,8 +61,8 @@ if ($.isNode()) {
             $.authorNum = `${random(1000000, 9999999)}`
             $.randomCode = random(1000000, 9999999)
             $.activityId = '581a27b8458743069b802351cdbae6b2'
-            $.activityShopId = '1000001243'
-            $.activityUrl = `https://lzdz1-isv.isvjd.com/dingzhi/dz/openCard/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
+            $.activityShopId = '1000004123'
+            $.activityUrl = `https://lzdz1-isv.isvjcloud.com/dingzhi/commonUse/openCard/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=1000001243&lng=00.000000&lat=00.000000&sid=&un_area=`
             await member_07();
             await $.wait(4000)
             if ($.bean > 0) {
@@ -102,15 +99,15 @@ async function member_07() {
             await task('common/accessLogWithAD', `venderId=${$.activityShopId}&code=99&pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&pageUrl=${$.activityUrl}&subType=app&adSource=null`, 1);
             await task('wxActionCommon/getUserInfo', `pin=${encodeURIComponent($.secretPin)}`, 1)
             if ($.index === 1) {
-                await task('dz/openCard/activityContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`, 0, 1)
+                await task('commonUse/openCard/activityContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`, 0, 1)
             } else {
-                await task('dz/openCard/activityContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`)
+                await task('commonUse/openCard/activityContent', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&pinImg=&nick=${encodeURIComponent($.pin)}&cjyxPin=&cjhyPin=&shareUuid=${encodeURIComponent($.authorCode)}`)
             }
-            await task('dz/openCard/checkOpenCard', `activityId=${$.activityId}&actorUuid=${$.actorUuid}&shareUuid=${$.authorCode}&pin=${encodeURIComponent($.secretPin)}`)
+            await task('commonUse/openCard/checkOpenCard', `activityId=${$.activityId}&actorUuid=${$.actorUuid}&shareUuid=${$.authorCode}&pin=${encodeURIComponent($.secretPin)}`)
             $.log("->关注店铺")
             if ($.shopTask) {
                 if (!$.shopTask.allStatus) {
-                    await task('dz/openCard/followShop', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&actorUuid=${encodeURIComponent($.actorUuid)}&taskType=23&taskValue=1000002520`)
+                    await task('commonUse/openCard/followShop', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&actorUuid=${encodeURIComponent($.actorUuid)}&taskType=23&taskValue=1000002520`)
                 } else {
                     $.log("    >>>已经关注过了\n")
                     return
@@ -148,9 +145,9 @@ async function member_07() {
                 }
 
                 await task("taskact/openCardcommon/drawContent", `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}`)
-                await task('dz/openCard/checkOpenCard', `activityId=${$.activityId}&actorUuid=${$.actorUuid}&shareUuid=${$.authorCode}&pin=${encodeURIComponent($.secretPin)}`)
-                // await task("dz/openCard/startDraw", `activityId=${$.activityId}&actorUuid=${$.actorUuid}&type=1&pin=${encodeURIComponent($.secretPin)}`)
-                // await task("dz/openCard/startDraw", `activityId=${$.activityId}&actorUuid=${$.actorUuid}&type=2&pin=${encodeURIComponent($.secretPin)}`)
+                await task('commonUse/openCard/checkOpenCard', `activityId=${$.activityId}&actorUuid=${$.actorUuid}&shareUuid=${$.authorCode}&pin=${encodeURIComponent($.secretPin)}`)
+                // await task("commonUse/openCard/startDraw", `activityId=${$.activityId}&actorUuid=${$.actorUuid}&type=1&pin=${encodeURIComponent($.secretPin)}`)
+                // await task("commonUse/openCard/startDraw", `activityId=${$.activityId}&actorUuid=${$.actorUuid}&type=2&pin=${encodeURIComponent($.secretPin)}`)
 
             } else {
                 $.log("没有获取到对应的任务。\n")
@@ -174,7 +171,7 @@ function task(function_id, body, isCommon = 0, own = 0) {
                             switch (function_id) {
                                 case 'wxActionCommon/getUserInfo':
                                     break;
-                                case 'dz/openCard/activityContent':
+                                case 'commonUse/openCard/activityContent':
                                     if (!data.data.hasEnd) {
                                         $.log(`开启【${data.data.activityName}】活动`)
                                         $.log("-------------------")
@@ -189,10 +186,10 @@ function task(function_id, body, isCommon = 0, own = 0) {
                                         $.log("活动已经结束");
                                     }
                                     break;
-                                case 'dz/openCard/checkOpenCard':
+                                case 'commonUse/openCard/checkOpenCard':
                                     $.openCardStatus = data.data;
                                     break;
-                                case 'dz/openCard/saveTask':
+                                case 'commonUse/openCard/saveTask':
                                     if (data.data) {
                                         if (data.data.addBeanNum) {
                                             $.bean += data.data.addBeanNum;
@@ -200,7 +197,7 @@ function task(function_id, body, isCommon = 0, own = 0) {
                                         }
                                     }
                                     break;
-                                case 'dz/openCard/startDraw':
+                                case 'commonUse/openCard/startDraw':
                                     if (data.data.drawOk) {
                                         switch (data.data.drawInfo.type) {
                                             case 6:
@@ -220,7 +217,7 @@ function task(function_id, body, isCommon = 0, own = 0) {
                                 case 'crm/pageVisit/insertCrmPageVisit':
                                     $.log("==> 上报成功")
 
-                                case 'dz/openCard/followShop':
+                                case 'commonUse/openCard/followShop':
                                     if (data.data) {
                                         if (data.data.addBeanNum) {
                                             $.bean += data.data.addBeanNum;
@@ -328,15 +325,15 @@ function bindWithVender(body, venderId) {
 }
 function taskUrl(function_id, body, isCommon) {
     return {
-        url: isCommon ? `https://lzdz1-isv.isvjd.com/${function_id}` : `https://lzdz1-isv.isvjd.com/dingzhi/${function_id}`,
+        url: isCommon ? `https://lzdz1-isv.isvjcloud.com/${function_id}` : `https://lzdz1-isv.isvjcloud.com/dingzhi/${function_id}`,
         headers: {
-            Host: 'lzdz1-isv.isvjd.com',
+            Host: 'lzdz1-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://lzdz1-isv.isvjd.com',
+            Origin: 'https://lzdz1-isv.isvjcloud.com',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,
@@ -349,15 +346,15 @@ function taskUrl(function_id, body, isCommon) {
 
 function getMyPing() {
     let opt = {
-        url: `https://lzdz1-isv.isvjd.com/customer/getMyPing`,
+        url: `https://lzdz1-isv.isvjcloud.com/customer/getMyPing`,
         headers: {
-            Host: 'lzdz1-isv.isvjd.com',
+            Host: 'lzdz1-isv.isvjcloud.com',
             Accept: 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Accept-Language': 'zh-cn',
             'Accept-Encoding': 'gzip, deflate, br',
             'Content-Type': 'application/x-www-form-urlencoded',
-            Origin: 'https://lzdz1-isv.isvjd.com',
+            Origin: 'https://lzdz1-isv.isvjcloud.com',
             'User-Agent': `jdapp;iPhone;9.5.4;13.6;${$.UUID};network/wifi;ADID/${$.ADID};model/iPhone10,3;addressid/0;appBuild/167668;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
             Connection: 'keep-alive',
             Referer: $.activityUrl,
