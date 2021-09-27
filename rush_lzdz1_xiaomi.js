@@ -3,7 +3,7 @@
 2021-8-11 ~ 2021-8-15
 https://lzdz1-isv.isvjcloud.com/dingzhi/commonUse/openCard/activity/5645188?activityId=b856fb097683415facd1ae733672de9e
 */
-const $ = new Env("OPPO");
+const $ = new Env("晓龙开卡");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const cp = $.isNode() ? require('child_process') : '';
@@ -47,7 +47,7 @@ if ($.isNode()) {
                 continue
             }
             authorCodeList = [
-                '4f7a40e534f7437283f897a28670606d',
+                '36a1f6079b594473b4ea96c3428d9b68',
             ]
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
