@@ -114,13 +114,13 @@ async function jdFruit() {
         return
       }
       await doDailyTask();
-      await doTenWater();//浇水十次
-      await getFirstWaterAward();//领取首次浇水奖励
+      //await doTenWater();//浇水十次
+      //await getFirstWaterAward();//领取首次浇水奖励
       await getTenWaterAward();//领取10浇水奖励
-      await getWaterFriendGotAward();//领取为2好友浇水奖励
-      await duck();
-      await doTenWaterAgain();//再次浇水
-      await predictionFruit();//预测水果成熟时间
+      //await getWaterFriendGotAward();//领取为2好友浇水奖励
+      //await duck();
+      //await doTenWaterAgain();//再次浇水
+      //await predictionFruit();//预测水果成熟时间
     } else {
       console.log(`初始化农场数据异常, 请登录京东 app查看农场0元水果功能是否正常,农场初始化数据: ${JSON.stringify($.farmInfo)}`);
       message = `【数据异常】请手动登录京东app查看此账号${$.name}是否正常`;
@@ -229,10 +229,10 @@ async function doDailyTask() {
   //   turntableFarm()//天天抽奖得好礼
   // ])
   await getAwardInviteFriend();
-  await clockInIn();//打卡领水
-  await executeWaterRains();//水滴雨
-  await getExtraAward();//领取额外水滴奖励
-  await turntableFarm()//天天抽奖得好礼
+  //await clockInIn();//打卡领水
+  //await executeWaterRains();//水滴雨
+  //await getExtraAward();//领取额外水滴奖励
+  //await turntableFarm()//天天抽奖得好礼
 }
 async function predictionFruit() {
   console.log('开始预测水果成熟时间\n');
@@ -785,7 +785,7 @@ async function clockInIn() {
 }
 //
 async function getAwardInviteFriend() {
-  await friendListInitForFarm();//查询好友列表
+  //await friendListInitForFarm();//查询好友列表
   // console.log(`查询好友列表数据：${JSON.stringify($.friendList)}\n`)
   if ($.friendList) {
     console.log(`\n今日已邀请好友${$.friendList.inviteFriendCount}个 / 每日邀请上限${$.friendList.inviteFriendMax}个`);
@@ -1254,7 +1254,7 @@ function timeFormat(time) {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `http:///jdcodes/getcode.php?type=farm&num=${randomCount}`, timeout: 10000,}, (err, resp, data) => {
+    $.get({url: `http:///jdcodes/?type=farm&num=${randomCount}`, timeout: 10000,}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
