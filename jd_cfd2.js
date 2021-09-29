@@ -246,9 +246,9 @@ async function cfd() {
     //await $.wait(2000)
     //await queryRubbishInfo()
 
-    雇导游
-    await $.wait(2000);
-    await employTourGuideInfo();
+    //雇导游
+    //await $.wait(2000);
+    //await employTourGuideInfo();
 
     //console.log(`\n做任务`)
     //牛牛任务
